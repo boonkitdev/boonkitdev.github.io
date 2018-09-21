@@ -1,0 +1,147 @@
+html {	
+	background-image: url('../images/light-grey-terrazzo.png');
+}
+
+/*Centre Picture*/
+#main img {
+	width: 150px;
+	height: 150px;
+	min-width: 120px;
+	border-radius: 80px;
+	/*padding: 20px;*/
+	/*display: inline-block;*/
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	/*justify-content: center;*/
+	/*align-items: center;*/
+	z-index: 2;
+}
+/*Bootstrap Grid Edited Dimensions*/
+.container-fluid {	
+	/*width:100%;
+	height:100%;*/
+	display:inline-block;
+	margin: 1px;
+	position:relative
+	padding: 0px;
+}
+.col-sm-6 {		
+	width:100%;
+	height:50vh;
+	position: relative;
+	transition: transform:1s;
+	transform-style: preserve-3d;
+}
+/*Default Picture Dimensions & Effects*/
+.col-sm-6 img {
+	width:100%;
+	height:50vh;
+	border-radius: 4px;
+	transition:1s;
+	padding:0px;
+	/*position:absolute;
+	backface-visibility: hidden;*/
+}
+.col-sm-6 :hover img {	
+	filter:blur(1px) brightness(80%);
+	box-shadow: 0 0 10px gray;
+}
+/*Default Text Settings & Positioning within Pictures*/
+.col-sm-6 h2, h3, ul, ol, iframe, p	{	
+	position: absolute;
+	top: 40%;
+	z-index: 50;
+	color: white;
+	text-align: center;
+	width:100%;
+	opacity:0;
+	transition:1s;
+}
+.col-sm-6 :hover h2 { 	
+	opacity: 1;
+	font-size: 2rem;
+}
+.col-sm-6 :hover p { 	
+	opacity: 1;
+	font-size: 1rem;
+}
+.col-sm-6 p {	
+	top:40%;
+}
+.col-sm-6 ul {
+	top:50%;
+}
+.col-sm-6 ol {
+	top:55%;
+	text-align: center;
+}
+.video-container {
+	position: absolute;
+	top: 0;
+	z-index: 1;
+}
+.col-sm-6 iframe {	
+	top:0;
+}
+/*Span Text*/
+.red {
+	color: red;
+}
+/*Flipcard Checkbox Animation*/
+label {	
+	-webkit-perspective: 1000px;
+	perspective: 1000px;
+	-webkit-transform-style: preserve-3d;
+	transform-style: preserve-3d;
+	display: block;
+	width: 100%;
+	height: 50vh;
+	position: absolute;
+	/*left: 50%;
+	top: 50%;
+	-webkit-transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%);*/
+	cursor: pointer;
+}
+.card {
+	position: relative;
+	width: 100%;
+	height: 50vh;
+	-webkit-transform-style: preserve-3d;
+	transform-style: preserve-3d;
+	-webkit-transition: all 600ms;
+	transition: all 600ms;
+	z-index: 20;
+}
+.card div {	
+	position: absolute;
+	width: 100%;
+	height: 50vh;
+	/*
+	text-align: center;
+	line-height: 200px;*/
+	-webkit-backface-visibility: hidden;
+	backface-visibility: hidden;
+	/*border-radius: 2px;*/
+}
+.card .back {	
+	-webkit-transform: rotateX(180deg);
+     transform: rotateX(180deg);
+}
+/*Animation/Movement when Card is Checked/Clicked*/
+input {	
+	display: none;
+}
+:checked + .card {
+	transform: rotateX(180deg);
+    -webkit-transform: rotateX(180deg);
+}
+:checked + .card h2 {
+	opacity: 0;
+}
+:checked + .card h3, ul, ol, iframe {
+	opacity: 1;
+}
+
